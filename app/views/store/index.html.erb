@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+  <h3>Signed in as <%= current_user.email %></h3>
+<% end %>
+
 <% @categories.each do |category| %>
   <%= link_to category.title, category_path(category) %>
 <% end %>

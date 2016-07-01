@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630005900) do
+ActiveRecord::Schema.define(version: 20160701012506) do
 
   create_table "carts", force: :cascade do |t|
     t.string  "status",  default: "not submitted"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160630005900) do
     t.string  "title"
     t.integer "inventory"
     t.integer "category_id"
-    t.integer "price"
+    t.float   "price"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id"
