@@ -7,7 +7,7 @@ class CartsController < ApplicationController
 
   def checkout
     @cart.checkout
-    redirect_to cart_path(@cart)
+    redirect_to cart_path(current_user)
   end
 
   private

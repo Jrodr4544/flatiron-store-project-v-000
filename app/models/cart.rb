@@ -10,7 +10,6 @@ class Cart < ActiveRecord::Base
   end
 
   def add_item(id)
-    # binding.pry
     line_item = LineItem.find_by(item_id: id)
     
     if line_item
@@ -18,7 +17,7 @@ class Cart < ActiveRecord::Base
     else
       line_item = LineItem.new(item_id: id, cart_id: self.id)
     end
-      line_item
+    line_item
   end
 
   def checkout
