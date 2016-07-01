@@ -11,12 +11,13 @@ class Cart < ActiveRecord::Base
 
   def add_item(id)
     # binding.pry
-    item = LineItem.find_by(item_id: id)
+    line_item = LineItem.find_by(item_id: id)
     
-    if item
-      item.update(quantity: item.quantity + 1)
+    if line_item
+      line_item.update(quantity: line_item.quantity + 1)
     else
-      new_item = LineItem.new(item_id: id, cart_id: self.id)
+      line_item = LineItem.new(item_id: id, cart_id: self.id)
     end
+      line_item
   end
 end
