@@ -4,9 +4,10 @@ class CartsController < ApplicationController
   def show
 
   end
-  
+
   def checkout
-    @cart = nil
+    @cart.checkout
+    redirect_to cart_path(@cart)
   end
 
   private
