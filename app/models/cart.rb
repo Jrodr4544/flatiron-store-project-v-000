@@ -24,5 +24,6 @@ class Cart < ActiveRecord::Base
   def checkout
     self.status = "Submitted"
     self.line_items.clear
+    self.save
   end
 end
