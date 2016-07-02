@@ -1,18 +1,14 @@
 class CartsController < ApplicationController
-  before_action :set_cart
   
   def show
-      @items = current_user.current_cart.items
+    # binding.pry
+    @current_cart = current_user.current_cart
   end
 
   def checkout
-    @cart.checkout
+    current_user.current_cart.checkout
+    current_user.current_cart.destroy
     redirect_to cart_path(current_user)
   end
 
-  private
-
-    def set_cart
-      @cart = Cart.find(params[:id])
-    end
 end

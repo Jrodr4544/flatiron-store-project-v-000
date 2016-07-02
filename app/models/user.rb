@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   belongs_to  :current_cart, :class_name => "Cart"
 
   def create_cart
-    self.current_cart = Cart.create(user_id: self.id)
+    self.current_cart = carts.create
+    save
   end
 end
