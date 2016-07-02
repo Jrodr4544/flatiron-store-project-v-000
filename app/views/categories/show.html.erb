@@ -4,10 +4,5 @@
 <ul>
 <% @items.each do |item| %>
     <li>$<%= item.price.to_f/100 %>, <%= link_to item.title, item_path(item) %></li>
-<%binding.pry%>
-    
-    <% if user_signed_in? %>
-    <li><h3><%= button_to "Add to cart", line_items_path(item) %></h3></li>
-    <% end %>
 <% end %>
 </ul>
