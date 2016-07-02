@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
   has_many    :carts
   belongs_to  :current_cart, :class_name => "Cart"
 
-
+  def create_cart
+    self.current_cart = Cart.create(user_id: self.id)
+  end
 end
